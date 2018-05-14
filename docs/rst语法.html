@@ -1,0 +1,546 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>rst语法 &#8212; sphinx-dev  文档</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="快速开始" href="快速开始.html" />
+    <link rel="prev" title="欢迎来到sphinx-dev’的文档" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rst">
+<h1>rst语法<a class="headerlink" href="#rst" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>标题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">一级标题</span>
+<span class="o">========</span>
+<span class="n">二级标题</span>
+<span class="o">--------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>段落<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>段落是被空行分割的文字片段，左侧必须对齐（没有空格，或者有相同多的空格）。</p>
+<p>缩进的段落被视为引文。</p>
+</div>
+<div class="section" id="id3">
+<h2>列表<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>符号列表<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">符号列表1</span>
+<span class="o">-</span> <span class="n">符号列表2</span>
+
+  <span class="o">+</span> <span class="n">二级符号列表1</span>
+
+  <span class="o">-</span> <span class="n">二级符号列表2</span>
+
+  <span class="o">*</span> <span class="n">二级符号列表3</span>
+
+<span class="o">*</span> <span class="n">符号列表3</span>
+
+<span class="o">+</span> <span class="n">符号列表4</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">符号列表1</p>
+</li>
+<li><p class="first">符号列表2</p>
+<ul class="simple">
+<li>二级符号列表1</li>
+</ul>
+<ul class="simple">
+<li>二级符号列表2</li>
+</ul>
+<ul class="simple">
+<li>二级符号列表3</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li>符号列表3</li>
+</ul>
+<ul class="simple">
+<li>符号列表4</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>编号列表<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">枚举列表1</span>
+<span class="c1">#. 枚举列表2</span>
+<span class="c1">#. 枚举列表3</span>
+
+<span class="p">(</span><span class="n">I</span><span class="p">)</span> <span class="n">枚举列表1</span>
+<span class="p">(</span><span class="c1">#) 枚举列表2</span>
+<span class="p">(</span><span class="c1">#) 枚举列表3</span>
+
+<span class="n">A</span><span class="p">)</span> <span class="n">枚举列表1</span>
+<span class="c1">#) 枚举列表2</span>
+<span class="c1">#) 枚举列表3</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>枚举列表1</li>
+<li>枚举列表2</li>
+<li>枚举列表3</li>
+</ol>
+<ol class="upperroman simple">
+<li>枚举列表1</li>
+<li>枚举列表2</li>
+<li>枚举列表3</li>
+</ol>
+<ol class="upperalpha simple">
+<li>枚举列表1</li>
+<li>枚举列表2</li>
+<li>枚举列表3</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3>定义列表<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">定义1</span>
+ <span class="n">这是定义1的内容</span>
+
+<span class="n">定义2</span>
+ <span class="n">这是定义2的内容</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>定义1</dt>
+<dd>这是定义1的内容</dd>
+<dt>定义2</dt>
+<dd>这是定义2的内容</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h3>字段列表<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:标题: reStructuredText语法说明
+
+:作者:
+ - Seay
+ - Seay1
+ - Seay2
+
+:时间: 2016年06月21日
+
+:概述: 这是一篇
+ 关于reStructuredText
+
+ 语法说明。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>选项列表<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>选项列表是一个类似两列的表格，左边是参数，右边是描述信息。当参数选项过长时，参数选项和描述信息各占一行。</p>
+<p>选项与参数之间有一个空格，参数选项与描述信息之间至少有两个空格。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">a</span>            <span class="n">command</span><span class="o">-</span><span class="n">line</span> <span class="n">option</span> <span class="s2">&quot;a&quot;</span>
+<span class="o">-</span><span class="n">b</span> <span class="n">file</span>       <span class="n">options</span> <span class="n">can</span> <span class="n">have</span> <span class="n">arguments</span>
+              <span class="ow">and</span> <span class="n">long</span> <span class="n">descriptions</span>
+<span class="o">--</span><span class="n">long</span>        <span class="n">options</span> <span class="n">can</span> <span class="n">be</span> <span class="n">long</span> <span class="n">also</span>
+<span class="o">--</span><span class="nb">input</span><span class="o">=</span><span class="n">file</span>  <span class="n">long</span> <span class="n">options</span> <span class="n">can</span> <span class="n">also</span> <span class="n">have</span>
+              <span class="n">arguments</span>
+<span class="o">/</span><span class="n">V</span>            <span class="n">DOS</span><span class="o">/</span><span class="n">VMS</span><span class="o">-</span><span class="n">style</span> <span class="n">options</span> <span class="n">too</span>
+</pre></div>
+</div>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>command-line option “a”</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b <var>file</var></span></kbd></td>
+<td>options can have arguments
+and long descriptions</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--long</span></kbd></td>
+<td>options can be long also</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input=<var>file</var></span></kbd></td>
+<td>long options can also have
+arguments</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/V</span></kbd></td>
+<td>DOS/VMS-style options too</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>块<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id10">
+<h3>文字块<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>文字块就是一段文字信息，在需要插入文本块的段落后面加上 ::，接着一个空行，然后就是文字块了。</p>
+<p>文字块不能定顶头写，要有缩进，结束标志是，新的一段文本贴开头，即没有缩进。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>下面是文字块内容：
+::
+
+   这是一段文字块
+   同样也是文字块
+   还是文字块
+
+这是新的一段。
+</pre></div>
+</div>
+<p>下面是文字块内容：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">这是一段文字块</span>
+<span class="n">同样也是文字块</span>
+<span class="n">还是文字块</span>
+</pre></div>
+</div>
+<p>这是新的一段。</p>
+</div>
+<div class="section" id="id11">
+<h3>行块<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>行块对于地址、诗句以及无装饰列表是非常有用的。行块是以 | 开头，每一个行块可以是多段文本。</p>
+<p><strong>|</strong>  前后各有一个空格。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>下面是行块内容：
+ | 这是一段行块内容
+ | 这同样也是行块内容
+   还是行块内容
+
+这是新的一段。
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>下面是行块内容：</dt>
+<dd><div class="first last line-block">
+<div class="line">这是一段行块内容</div>
+<div class="line">这同样也是行块内容
+还是行块内容</div>
+</div>
+</dd>
+</dl>
+<p>这是新的一段。</p>
+</div>
+<div class="section" id="id12">
+<h3>块引用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>块引用是通过缩进来实现的，引用块要在前面的段落基础上缩进。</p>
+<p>通常引用结尾会加上出处(attribution)，出处的文字块开头是 –、— 、—，后面加上出处信息。</p>
+<p>块引用可以使用空的注释 .. 分隔上下的块引用。</p>
+<p>注意在新的块和出处都要添加一个空行。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>下面是引用的内容：
+
+    “真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。”
+
+    --- 鲁迅
+
+..
+
+      “人生的意志和劳动将创造奇迹般的奇迹。”
+
+      — 涅克拉索
+</pre></div>
+</div>
+<p>下面是引用的内容：</p>
+<blockquote>
+<div><p>“真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。”</p>
+<p class="attribution">&mdash;鲁迅</p>
+</div></blockquote>
+<blockquote>
+<div><p>“人生的意志和劳动将创造奇迹般的奇迹。”</p>
+<p class="attribution">&mdash;涅克拉索</p>
+</div></blockquote>
+</div>
+<div class="section" id="id13">
+<h3>文档测试块<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>文档测试块是交互式的Python会话，以 <strong>&gt;&gt;&gt;</strong> 开始，一个空行结束。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;This is a doctest block.&quot;</span>
+<span class="go">This is a doctest block.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="s2">&quot;This is a doctest block.&quot;</span>
+<span class="go">This is a doctest block.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>注解<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">note</span><span class="p">::</span>
+
+   <span class="n">注解部分</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">注解部分</p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>警告<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">warning</span><span class="p">::</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>表格<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>reStructuredText提供两种表格：网格表（Grid Tables），简单表（Simple Tables）。</p>
+<div class="section" id="id17">
+<h3>网格表<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>网格表中使用的符号有：<em>-</em>、<em>=</em>、<em>|</em>、<em>+</em>。</p>
+<p>“-“用来分隔行， = 用来分隔表头和表体行，| 用来分隔列，+ 用来表示行和列相交的节点。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Grid</span> <span class="n">table</span><span class="p">:</span>
+
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+============+============+===========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span> <span class="n">span</span> <span class="n">columns</span><span class="o">.|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span>  <span class="o">|</span> <span class="o">-</span> <span class="n">Cells</span>   <span class="o">|</span>
+<span class="o">+------------+</span> <span class="n">span</span> <span class="n">rows</span><span class="o">.</span> <span class="o">|</span> <span class="o">-</span> <span class="n">contain</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">4</span> <span class="o">|</span>            <span class="o">|</span> <span class="o">-</span> <span class="n">blocks</span><span class="o">.</span> <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+</pre></div>
+</div>
+<p>Grid table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="34%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1</td>
+<td>column 2</td>
+<td>column 3</td>
+</tr>
+<tr class="row-odd"><td>body row 2</td>
+<td colspan="2">Cells may span columns.</td>
+</tr>
+<tr class="row-even"><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td rowspan="2"><ul class="first last simple">
+<li>Cells</li>
+<li>contain</li>
+<li>blocks.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>body row 4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id18">
+<h3>简单表<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<p>简单表相对于网格表，少了 <em>|</em> 和 <em>+</em> 两个符号，只用 <em>-</em> 和 <em>=</em> 表示。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simple</span> <span class="n">table</span><span class="p">:</span>
+
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+   <span class="n">Inputs</span>     <span class="n">Output</span>
+<span class="o">------------</span>  <span class="o">------</span>
+  <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">True</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">True</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+</pre></div>
+</div>
+<p>Simple table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr class="row-even"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id19">
+<h2>分隔符<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
+<p>分隔符就是一条水平的横线，是由 4 个 <em>-</em> 或者更多组成，需要添加换行。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">上面部分</span>
+
+<span class="o">------------</span>
+
+<span class="n">下面部分</span>
+</pre></div>
+</div>
+<p>上面部分</p>
+<hr class="docutils" />
+<p>下面部分</p>
+</div>
+<div class="section" id="id20">
+<h2>超链接<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<p>介绍各类带有链接性质的超链接</p>
+<div class="section" id="id21">
+<h3>自动超链接<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<p>reStructuredText会自动将网址生成超链接。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SeayXu</span><span class="o">/</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/SeayXu/">https://github.com/SeayXu/</a></p>
+</div>
+<div class="section" id="id22">
+<h3>外部超链接<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<p>引用/参考(reference)，是简单的形式，只能是一个词语，引用的文字不能带有空格。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这篇文章来自我的Github,请参考 reference_。
+
+.. _reference: https://github.com/SeayXu/
+</pre></div>
+</div>
+<p>这篇文章来自我的Github,请参考 <a class="reference external" href="https://github.com/SeayXu/">reference</a>。</p>
+<p>引用/参考(reference)，行内形式，引用的文字可以带有空格或者符号。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这篇文章来自我的Github,请参考 `SeayXu &lt;https://github.com/SeayXu/&gt;`_。
+</pre></div>
+</div>
+<p>这篇文章来自我的Github,请参考 <a class="reference external" href="https://github.com/SeayXu/">SeayXu</a>。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">rst语法</a><ul>
+<li><a class="reference internal" href="#id1">标题</a></li>
+<li><a class="reference internal" href="#id2">段落</a></li>
+<li><a class="reference internal" href="#id3">列表</a><ul>
+<li><a class="reference internal" href="#id4">符号列表</a></li>
+<li><a class="reference internal" href="#id5">编号列表</a></li>
+<li><a class="reference internal" href="#id6">定义列表</a></li>
+<li><a class="reference internal" href="#id7">字段列表</a></li>
+<li><a class="reference internal" href="#id8">选项列表</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">块</a><ul>
+<li><a class="reference internal" href="#id10">文字块</a></li>
+<li><a class="reference internal" href="#id11">行块</a></li>
+<li><a class="reference internal" href="#id12">块引用</a></li>
+<li><a class="reference internal" href="#id13">文档测试块</a></li>
+<li><a class="reference internal" href="#id14">注解</a></li>
+<li><a class="reference internal" href="#id15">警告</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id16">表格</a><ul>
+<li><a class="reference internal" href="#id17">网格表</a></li>
+<li><a class="reference internal" href="#id18">简单表</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">分隔符</a></li>
+<li><a class="reference internal" href="#id20">超链接</a><ul>
+<li><a class="reference internal" href="#id21">自动超链接</a></li>
+<li><a class="reference internal" href="#id22">外部超链接</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="上一章">欢迎来到sphinx-dev’的文档</a></li>
+      <li>Next: <a href="快速开始.html" title="下一章">快速开始</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rst语法.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, wjw19854.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/rst语法.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
