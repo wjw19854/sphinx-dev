@@ -10,6 +10,7 @@ sphinx文档工具学习
 ## 文件夹说明
 
 `doc_source` sphinx文档源码目录.文档从这里生成 在此目录下执行`sh make.sh` 可以重新覆盖`docs`下的html文档
+
 `docs` 生成的html目录文档,可以配合github pages 访问
 
 这个版本的说明针对的*sphinx*版本号为*1.7.4*
