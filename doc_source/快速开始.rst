@@ -1,3 +1,83 @@
 ========
 快速开始
 ========
+
+安装
+-----
+
+::
+
+  pip install Sphinx
+
+初始化文档
+----------
+
+
+::
+
+  sphinx-quickstart
+
+会有一个引导,确保autodoc选项选择yes
+
+
+定义文档结构
+--------------
+
+原始文档类似这样
+
+::
+
+  .. toctree::
+   :maxdepth: 2
+
+追加rst文档文件名,去掉扩展名部分,类似这样
+
+例如当前目录下有intro.rst和tutorial.rst两个文档
+
+::
+
+  .. toctree::
+   :maxdepth: 2
+
+   intro
+   tutorial
+   ...
+
+
+追加内容
+--------
+
+继续追加rst文档,支持绝大部分restrusturedtext格式和sphinx特有的功能.
+
+例如跨文件的引用.例如当前文档为快速开始.查看rst语法可以看 :ref:`rst语法`
+
+这里使用的是 *sphinx.ext.autosectionlabel* 扩展可以用标题做引用名
+
+生成html文档
+------------
+
+::
+
+  make html
+
+基本配置
+--------
+在前面执行 sphinx-quickstart 会生成一个conf.py文件,这里会对生成的文档做一些配置.这个配置文件是基于python语法格式的,在生成文档时也会执行.因此可以按python语法修改其中的配置项,如已经注释掉的内容,或者增加一个搜索路径*sys.path*等
+
+Autodoc
+--------
+在前面也说过要确保autodoc选择为yes,这里介绍一下autodoc的功能,这个功能主要是自动读取Python代码中的注释自动生成文档
+
+autodoc需要导入你的模块以提取文档字符串。因此，您必须在conf.py中将相应的路径添加到sys.path中。
+
+文档整合
+--------
+文档中可以引用互联上上其他sphinx的文档.例如想引用io.open()函数的文档,可以直接引入文档,像调用方法一样调用文档
+
+conf.py中需要增加 sphinx.ext.intersphinx 到 extensions 列表中,并设置  intersphinx_mapping 参数值
+
+::
+
+  intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+
+然后就可以像:py:func:`io.open` 这样引入函数的文档

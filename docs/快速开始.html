@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>快速开始 &#8212; sphinx-dev  文档</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -16,15 +16,24 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="prev" title="rst语法" href="rst语法.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="next" title="rst语法" href="rst语法.html" />
+    <link rel="prev" title="欢迎来到sphinx-dev’的文档" href="index.html" /> 
   </head><body>
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="rst语法.html" title="rst语法"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="欢迎来到sphinx-dev’的文档"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx-dev  文档</a> &#187;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -33,6 +42,67 @@
             
   <div class="section" id="id1">
 <h1>快速开始<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sphinx</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>初始化文档<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<p>会有一个引导,确保autodoc选项选择yes</p>
+</div>
+<div class="section" id="id4">
+<h2>定义文档结构<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>原始文档类似这样</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+ <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>追加rst文档文件名,去掉扩展名部分,类似这样</p>
+<p>例如当前目录下有intro.rst和tutorial.rst两个文档</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+ <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+
+ <span class="n">intro</span>
+ <span class="n">tutorial</span>
+ <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>追加内容<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>继续追加rst文档,支持绝大部分restrusturedtext格式和sphinx特有的功能.</p>
+<p>例如跨文件的引用.例如当前文档为快速开始.查看rst语法可以看 <a class="reference internal" href="rst语法.html#rst"><span class="std std-ref">rst语法</span></a></p>
+<p>这里使用的是 <em>sphinx.ext.autosectionlabel</em> 扩展可以用标题做引用名</p>
+</div>
+<div class="section" id="html">
+<h2>生成html文档<a class="headerlink" href="#html" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>基本配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>在前面执行 sphinx-quickstart 会生成一个conf.py文件,这里会对生成的文档做一些配置.这个配置文件是基于python语法格式的,在生成文档时也会执行.因此可以按python语法修改其中的配置项,如已经注释掉的内容,或者增加一个搜索路径*sys.path*等</p>
+</div>
+<div class="section" id="autodoc">
+<h2>Autodoc<a class="headerlink" href="#autodoc" title="永久链接至标题">¶</a></h2>
+<p>在前面也说过要确保autodoc选择为yes,这里介绍一下autodoc的功能,这个功能主要是自动读取Python代码中的注释自动生成文档</p>
+<p>autodoc需要导入你的模块以提取文档字符串。因此，您必须在conf.py中将相应的路径添加到sys.path中。</p>
+</div>
+<div class="section" id="id7">
+<h2>文档整合<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>文档中可以引用互联上上其他sphinx的文档.例如想引用io.open()函数的文档,可以直接引入文档,像调用方法一样调用文档</p>
+<p>conf.py中需要增加 sphinx.ext.intersphinx 到 extensions 列表中,并设置  intersphinx_mapping 参数值</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://docs.python.org/3&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>然后就可以像:py:func:<cite>io.open</cite> 这样引入函数的文档</p>
+</div>
 </div>
 
 
@@ -40,14 +110,28 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="rst语法.html" title="上一章">rst语法</a></li>
-  </ul></li>
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">快速开始</a><ul>
+<li><a class="reference internal" href="#id2">安装</a></li>
+<li><a class="reference internal" href="#id3">初始化文档</a></li>
+<li><a class="reference internal" href="#id4">定义文档结构</a></li>
+<li><a class="reference internal" href="#id5">追加内容</a></li>
+<li><a class="reference internal" href="#html">生成html文档</a></li>
+<li><a class="reference internal" href="#id6">基本配置</a></li>
+<li><a class="reference internal" href="#autodoc">Autodoc</a></li>
+<li><a class="reference internal" href="#id7">文档整合</a></li>
 </ul>
-</div>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="index.html"
+                        title="上一章">欢迎来到sphinx-dev’的文档</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="rst语法.html"
+                        title="下一章">rst语法</a></p>
   <div role="note" aria-label="source link">
     <h3>本页</h3>
     <ul class="this-page-menu">
@@ -71,20 +155,24 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2018, wjw19854.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/快速开始.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="rst语法.html" title="rst语法"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="欢迎来到sphinx-dev’的文档"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sphinx-dev  文档</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2018, wjw19854.
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.4 创建。
+    </div>
   </body>
 </html>

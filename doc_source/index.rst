@@ -7,11 +7,11 @@
 ======================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: 内容:
 
-   ./rst语法
    ./快速开始
+   ./rst语法
 
 
 Indices and tables
