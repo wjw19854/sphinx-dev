@@ -12,9 +12,11 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../'))
 # sys.path.insert(0, os.path.abspath('.'))
+print sys.path
 
 
 # -- Project information -----------------------------------------------------
@@ -24,9 +26,9 @@ copyright = u'2018, wjw19854'
 author = u'wjw19854'
 
 # The short X.Y version
-version = u''
+version = u'0.1'
 # The full version, including alpha/beta/rc tags
-release = u''
+release = u'last'
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,7 +42,7 @@ release = u''
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.githubpages',
+#    'sphinx.ext.githubpages',
     'sphinx.ext.autosectionlabel',
 ]
 
@@ -78,13 +80,30 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
-html_theme = 'classic'
+# html_theme = 'classic'
+html_theme = 'sphinx_rtd_theme'
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = {
+    'canonical_url': '',
+    'analytics_id': '',
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    # 'vcs_pageview_mode': 'view',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

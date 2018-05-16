@@ -1,0 +1,22 @@
+sphinx\-dev package
+===================
+
+Submodules
+----------
+
+sphinx\-dev.sphinx\_dev module
+------------------------------
+
+.. automodule:: sphinx-dev.sphinx_dev
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: sphinx-dev
+    :members:
+    :undoc-members:
+    :show-inheritance:

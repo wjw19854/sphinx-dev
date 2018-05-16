@@ -7,6 +7,17 @@ sphinx文档工具学习
 
 其中详细介绍了sphinx文档工具,和本文档的生成方式
 
+本文档的目的
+
+* 记录sphinx基本使用方法
+* 自动根据代码注释生成代码API文档
+* restructuredtext文档语法
+* 样例文档生成方法
+* 适用github pages展示项目文档
+
+v0.1
+
+
 ## 文件夹说明
 
 `doc_source` sphinx文档源码目录.文档从这里生成 在此目录下执行`sh make.sh` 可以重新覆盖`docs`下的html文档

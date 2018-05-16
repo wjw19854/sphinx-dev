@@ -1,0 +1,28 @@
+sphinx\-d package
+=================
+
+.. automodule:: sphinx-d
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+sphinx\-d.Sph module
+--------------------
+
+.. automodule:: sphinx-d.Sph
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+sphinx\-d.c module
+------------------
+
+.. automodule:: sphinx-d.c
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

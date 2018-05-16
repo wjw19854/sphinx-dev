@@ -12,7 +12,7 @@
 
    ./快速开始
    ./rst语法
-
+   ./api/modules
 
 Indices and tables
 ==================
