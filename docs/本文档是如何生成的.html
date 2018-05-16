@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>本文档是如何生成的 &mdash; sphinx-dev last 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="sphinx-dev" href="api/modules.html" />
+    <link rel="prev" title="rst语法" href="rst语法.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sphinx-dev
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">内容:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="快速开始.html">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst语法.html">rst语法</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">本文档是如何生成的</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">环境准备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">初始化文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">修改配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">编写文档内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api">生成代码API文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">制作刷新文档脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">生成文档</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">sphinx-dev</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sphinx-dev</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>本文档是如何生成的</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/本文档是如何生成的.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>本文档是如何生成的<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>环境准备<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>安装依赖包</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span> <span class="n">sphinx_rtd_theme</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>初始化文档<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>因为要使用docs目录存放最终生成html文档以使用github pages,所以再doc_source目录生成文档源码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">makedir</span> <span class="n">doc_source</span>
+</pre></div>
+</div>
+<p>初始化文档源码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">doc_source</span>
+<span class="n">sphinx_quickstart</span>
+</pre></div>
+</div>
+<p>确保 autodoc选yes</p>
+</div>
+<div class="section" id="id4">
+<h2>修改配置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>编辑conf.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 修改搜索路径到项目根目录</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">))</span>
+<span class="nb">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+
+<span class="c1"># 确保插件启用</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+<span class="c1">#    &#39;sphinx.ext.githubpages&#39;,</span>
+    <span class="s1">&#39;sphinx.ext.autosectionlabel&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># 修改文档主题</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+<span class="c1"># 主题选项</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;canonical_url&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;analytics_id&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logo_only&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;display_version&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;prev_next_buttons_location&#39;</span><span class="p">:</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;style_external_links&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="c1"># &#39;vcs_pageview_mode&#39;: &#39;view&#39;,</span>
+    <span class="c1"># Toc options</span>
+    <span class="s1">&#39;collapse_navigation&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;sticky_navigation&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;navigation_depth&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;includehidden&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;titles_only&#39;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>编写文档内容<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>编写手动写的文档rst文件,具体可以点击右上角的View page source按钮来查看</p>
+<p>编写index.rst,具体可以看首页的View page source按钮查看</p>
+</div>
+<div class="section" id="api">
+<h2>生成代码API文档<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h2>
+<p>这里要用到之前开启的autodoc插件了</p>
+<p>根据代码中的注释自动生成文档</p>
+<p>将API文档单独存在一个目录下,新建一个api目录</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd># 新建api文档目录
+$ mkdir api
+# 进入目录
+$ cd api</dd>
+</dl>
+<p>生成api文档源码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span> <span class="o">../../</span>
+</pre></div>
+</div>
+<p>注意-o指定的是输出路径选本路径
+第二个参数是代码路径,选择项目根目录, <strong>要和在conf中引入的路径一致</strong></p>
+<p>在index.rst中引入这里生成的文档</p>
+<p>编辑 index.rst 将modules引入进去</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">api</span><span class="o">/</span><span class="n">modules</span>
+</pre></div>
+</div>
+<p>回到doc_source目录下</p>
+</div>
+<div class="section" id="id6">
+<h2>制作刷新文档脚本<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>在doc_source目录中新建一个新的文档刷新脚本 make.sh</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">../</span><span class="n">html</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">../</span><span class="n">api</span><span class="o">/*</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">--</span><span class="n">ext</span><span class="o">-</span><span class="n">autodoc</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">M</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span><span class="n">api</span><span class="o">/</span> <span class="o">../</span>
+<span class="n">make</span> <span class="n">html</span>
+<span class="n">cp</span> <span class="o">-</span><span class="n">vR</span> <span class="o">../</span><span class="n">html</span><span class="o">/*</span> <span class="o">../</span><span class="n">docs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>生成文档<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>在根目录生成docs目录用于保存生成的html代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir ../docs
+$ sh make.sh
+</pre></div>
+</div>
+<p>打开docs/index.html预览一下吧</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/modules.html" class="btn btn-neutral float-right" title="sphinx-dev" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rst语法.html" class="btn btn-neutral" title="rst语法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, wjw19854.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'last',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

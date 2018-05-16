@@ -12,6 +12,7 @@
 
    ./快速开始
    ./rst语法
+   ./本文档是如何生成的
    ./api/modules
 
 Indices and tables

@@ -1,0 +1,136 @@
+====================
+本文档是如何生成的
+====================
+
+环境准备
+===========
+
+安装依赖包
+
+::
+
+  pip install sphinx sphinx_rtd_theme
+
+初始化文档
+============
+
+因为要使用docs目录存放最终生成html文档以使用github pages,所以再doc_source目录生成文档源码
+
+::
+
+  makedir doc_source
+
+初始化文档源码
+
+::
+
+  cd doc_source
+  sphinx_quickstart
+
+确保 autodoc选yes
+
+修改配置
+===========
+
+编辑conf.py
+
+::
+
+  # 修改搜索路径到项目根目录
+  import os
+  import sys
+  sys.path.insert(0, os.path.abspath('../'))
+  print sys.path
+
+  # 确保插件启用
+  extensions = [
+      'sphinx.ext.autodoc',
+  #    'sphinx.ext.githubpages',
+      'sphinx.ext.autosectionlabel',
+  ]
+
+  # 修改文档主题
+  html_theme = 'sphinx_rtd_theme'
+  # 主题选项
+  html_theme_options = {
+      'canonical_url': '',
+      'analytics_id': '',
+      'logo_only': False,
+      'display_version': True,
+      'prev_next_buttons_location': 'bottom',
+      'style_external_links': False,
+      # 'vcs_pageview_mode': 'view',
+      # Toc options
+      'collapse_navigation': True,
+      'sticky_navigation': True,
+      'navigation_depth': 4,
+      'includehidden': True,
+      'titles_only': False
+  }
+
+编写文档内容
+===============
+
+编写手动写的文档rst文件,具体可以点击右上角的View page source按钮来查看
+
+编写index.rst,具体可以看首页的View page source按钮查看
+
+生成代码API文档
+==================
+
+这里要用到之前开启的autodoc插件了
+
+根据代码中的注释自动生成文档
+
+将API文档单独存在一个目录下,新建一个api目录
+
+::
+  # 新建api文档目录
+  $ mkdir api
+  # 进入目录
+  $ cd api
+
+生成api文档源码
+
+::
+
+  sphinx-apidoc -o ./ ../../
+
+注意-o指定的是输出路径选本路径
+第二个参数是代码路径,选择项目根目录, **要和在conf中引入的路径一致**
+
+在index.rst中引入这里生成的文档
+
+编辑 index.rst 将modules引入进去
+
+::
+
+  ./api/modules
+
+
+回到doc_source目录下
+
+制作刷新文档脚本
+==================
+
+在doc_source目录中新建一个新的文档刷新脚本 make.sh
+
+::
+
+  rm -rf ../html
+  rm -f ../api/*
+  sphinx-apidoc --ext-autodoc -f -M -o ./api/ ../
+  make html
+  cp -vR ../html/* ../docs
+
+生成文档
+===========
+
+在根目录生成docs目录用于保存生成的html代码
+
+::
+
+  $ mkdir ../docs
+  $ sh make.sh
+
+打开docs/index.html预览一下吧
